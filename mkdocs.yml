@@ -1,0 +1,117 @@
+site_name: "Algoritmos e Programacao - UNA (2026/2)"
+site_url: https://danhpaiva.github.io/una-algprog-zensical-202602
+site_author: Daniel Paiva
+
+repo_url: https://github.com/danhpaiva/una-algprog-zensical-202602
+repo_name: danhpaiva/una-algprog-zensical-202602
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: pt-BR
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    # Estado 1: segue a preferência do sistema
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Alternar para modo claro
+    # Estado 2: claro
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Alternar para modo escuro
+    # Estado 3: escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Alternar para modo automático
+  features:
+    - navigation.tabs # Seções de topo viram abas
+    - navigation.sections # Agrupa itens no menu lateral
+    - navigation.indexes # Permite página índice em seções
+    - navigation.top # Botão "Voltar ao topo"
+    - navigation.tracking # Atualiza a URL conforme a rolagem
+    - navigation.instant # Navegação SPA (sem recarregar a página)
+    - navigation.instant.progress # Barra de progresso no carregamento
+    - toc.follow # Sumário acompanha a leitura
+    - content.code.copy # Botão de copiar código
+    - content.tabs.link # Abas de conteúdo sincronizadas
+    - content.action.edit # Botão "editar esta página"
+    - search.suggest # Sugestões de busca
+    - search.highlight # Destaca termos buscados
+
+nav:
+  - Home: index.md
+  # - Guia do Professor: setup.md
+  - 🧰 Ferramentas: ferramentas.md
+  - 📖 Aulas:
+      - 01. Pensamento Computacional e Lógica: aulas/01-aula.md
+      - 02. Lógica de Programação e Fluxogramas: aulas/02-aula.md
+      - 03. Variáveis e Operadores Matemáticos: aulas/03-aula.md
+      - 04. Operadores Relacionais e Lógicos: aulas/04-aula.md
+      - 05. Boas Práticas na Construção de Algoritmos: aulas/05-aula.md
+      - 06. Tipos de Dados Primitivos e Compostos: aulas/06-aula.md
+      - "07. Estruturas de Controle: IF-ELSE": aulas/07-aula.md
+      - "08. Estruturas de Controle: SWITCH-CASE": aulas/08-aula.md
+      - "09. Repetição: WHILE e DO-WHILE": aulas/09-aula.md
+      - "10. Repetição: FOR e FOREACH": aulas/10-aula.md
+      - 11. Vetores: aulas/11-aula.md
+      - 12. Funções e Procedimentos: aulas/12-aula.md
+      - 13. Estrutura de Dados: aulas/13-aula.md
+      - 14. Introdução à POO: aulas/14-aula.md
+      - 15. POO na Prática: aulas/15-aula.md
+  - 📝 Listas:
+      - Lista 01: listas/01-lista.md
+      - Lista 02: listas/02-lista.md
+      - Lista 03: listas/03-lista.md
+      - Lista 04: listas/04-lista.md
+      - Lista 05: listas/05-lista.md
+      - Lista 06: listas/06-lista.md
+      - Lista 07: listas/07-lista.md
+      - Lista 08: listas/08-lista.md
+      - Lista 09: listas/09-lista.md
+      - Lista 10: listas/10-lista.md
+      - Lista 11: listas/11-lista.md
+      - Lista 12: listas/12-lista.md
+      - Lista 13: listas/13-lista.md
+      - Lista 14: listas/14-lista.md
+      - Lista 15: listas/15-lista.md
+  # - 📝 Atividades:
+  #    - Projeto 01: trabalhos/projeto-01.md
+
+# Nenhum plugin declarado - migração de MkDocs Material para Zensical:
+# - search: removida - busca agora é nativa do Zensical, herda o idioma de
+#   theme.language (pt-BR) automaticamente, sem precisar ser declarada.
+# - git-revision-date-localized: ainda não suportado pelo Zensical, está no
+#   backlog (Tier 2, item #18): https://zensical.org/compatibility/plugins/
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+# Para habilitar estatísticas, crie um ID no Google Analytics e preencha abaixo:
+# extra:
+#   analytics:
+#     provider: google
+#     property: !ENV [GA_ID, "G-XXXXXXXXXX"] # Busca nas variáveis de ambiente ou usa o padrão
